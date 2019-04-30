@@ -2,7 +2,7 @@ package com.e3civichigh.coding.thenamegame;
 
 public class TheNameGame {
     public static void main(String[] args) {
-        String name = "Stephen"; // TODO 1 Change this to your name
+        String name = "Felix";
 
         TheNameGame game = new TheNameGame();
         String song = game.createSong(name);
@@ -12,6 +12,24 @@ public class TheNameGame {
     @SuppressWarnings("WeakerAccess")
     public String createSong(String name) {
         // TODO 2 Create the name game song from the parameter name
-        return null;
+        String sep = " , ";
+        String b = "b";
+        String f = "f";
+        String x = name;
+        String y = name.substring(1);;
+
+        char letter = name.toLowerCase().charAt(0);
+        if ("aeiou".indexOf(letter) > -1) {
+            y = name.toLowerCase();
+        } else if (letter == 'b') {
+            b = "";
+        } else if (letter == 'f'){
+            f = "";
+        }
+
+        String song = x + sep + x + sep + "bo-" + b + y + "\n";
+        song = song + "Banana-fana fo-" + f + y + "\n";
+        song = song + "Fee-fi-mo-m" + y + "\n" + x + "!";
+        return song;
     }
 }
